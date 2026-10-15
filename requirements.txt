@@ -1,0 +1,6 @@
+openai
+python-dotenv
+pymupdf4llm
+chromadb
+langgraph
+streamlit
