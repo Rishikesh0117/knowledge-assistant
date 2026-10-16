@@ -9,7 +9,7 @@ def _collection():
     global _col
     if _col is None:
         db = chromadb.PersistentClient(path=str(config.VECTORSTORE_DIR))
-        _col = db.get_collection("kb")
+        _col = db.get_collection("knowledge_base")
     return _col
 
 

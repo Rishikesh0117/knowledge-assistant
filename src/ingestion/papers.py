@@ -36,11 +36,17 @@ def _pack(text, max_words):
     return chunks
 
 
+SKIP = ("references", "completion", "acknowledg")  # keep this at module level
+
+
 def load_papers(max_words=450):
     chunks = []
     for pdf in sorted(config.PAPERS_DIR.glob("*.pdf")):
         md = pymupdf4llm.to_markdown(str(pdf))
         for heading, body in _split_sections(md):
+            heading = heading.replace("*", "").strip()
+            if any(s in heading.lower() for s in SKIP):
+                continue
             for i, c in enumerate(_pack(body, max_words)):
                 if len(c.split()) < 30:  # drop tiny fragments
                     continue
@@ -55,7 +61,6 @@ def load_papers(max_words=450):
                     },
                 })
     return chunks
-
 
 if __name__ == "__main__":
     cs = load_papers()
