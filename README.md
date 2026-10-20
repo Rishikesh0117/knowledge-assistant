@@ -2,7 +2,7 @@
 
 An agentic RAG app that answers questions across 11 foundational ML papers, with cited sources and a visible reasoning trace. Built for the **Nebius x NVIDIA Global AI Hackathon** (Best Apps and Agents track).
 
-- **Live demo:** [ADD LIVE DEMO URL]
+- **Live demo:** [technical-knowledge-assistant.streamlit.app](https://technical-knowledge-assistant.streamlit.app/)
 - **Demo video:** [ADD YOUTUBE URL]
 - **License:** MIT
 
