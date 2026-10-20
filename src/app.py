@@ -36,7 +36,16 @@ def scroll(where):
 
 st.set_page_config(page_title="Technical Knowledge Assistant", page_icon="📚")
 
-MAX_QUESTIONS = 10
+st.markdown(
+    "<style>[data-testid='stHeaderActionElements'] {display: none;}</style>",
+    unsafe_allow_html=True,
+)
+st.markdown(
+    "<style>[data-stale='true'] {display: none !important;}</style>",
+    unsafe_allow_html=True,
+)
+
+MAX_QUESTIONS = 15
 EXAMPLES = [
     "How does Switch Transformer's routing differ from the sparsely-gated MoE layer?",
     "Compare LoRA with the adapter methods surveyed in the PEFT paper.",

@@ -1,6 +1,6 @@
 openai
 python-dotenv
 pymupdf4llm
-chromadb
+chromadb==1.5.9
 langgraph
 streamlit

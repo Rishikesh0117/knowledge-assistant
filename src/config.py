@@ -10,6 +10,12 @@ DOCS_DIR = ROOT / "data" / "langgraph_docs"
 VECTORSTORE_DIR = ROOT / "vectorstore"
 
 NEBIUS_API_KEY = os.environ.get("NEBIUS_API_KEY")
+if not NEBIUS_API_KEY:
+    try:
+        import streamlit as st
+        NEBIUS_API_KEY = st.secrets["NEBIUS_API_KEY"]
+    except Exception:
+        pass
 NEBIUS_BASE_URL = "https://api.tokenfactory.nebius.com/v1/"
 
 # Copy the exact model names from the Token Factory Model catalog
